@@ -8,10 +8,11 @@ class CarAdmin(admin.ModelAdmin):
     list_display = ('car', 'color',)
     list_per_page = 20
     list_filter = ['color']
+    readonly_fields = ('created', 'lastUpdated',)
     search_fields = ['car', ]
     fieldsets = (
             ('Car Details', {
-                'fields': ('car', 'color', 'front_of')
+                'fields': ('car', 'color', 'front_of', 'created', 'lastUpdated')
             }),
         )
 
